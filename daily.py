@@ -29,7 +29,7 @@ def view_day(date_str: str):
     """Show timetable + tasks + note for a single day."""
     day_name = utils.day_name(date_str)
     utils.header(
-        f"📅  {utils.friendly_date(date_str)}",
+        f"  {utils.friendly_date(date_str)}",
         "Daily Overview", "green",
     )
 
@@ -47,7 +47,7 @@ def view_day(date_str: str):
     else:
         tt_lines.append("  No classes scheduled.\n", style="dim")
 
-    tt_panel = Panel(tt_lines, title="[bold cyan]📋 Timetable[/]",
+    tt_panel = Panel(tt_lines, title="[bold cyan] Timetable[/]",
                      border_style="cyan", expand=True)
 
     # ── Tasks panel ──
@@ -66,7 +66,7 @@ def view_day(date_str: str):
     else:
         task_lines.append("  No tasks for today.\n", style="dim")
 
-    task_panel = Panel(task_lines, title="[bold green]✅ Tasks[/]",
+    task_panel = Panel(task_lines, title="[bold green] Tasks[/]",
                        border_style="green", expand=True)
 
     console.print(Columns([tt_panel, task_panel], equal=True, expand=True))
@@ -74,7 +74,7 @@ def view_day(date_str: str):
     # ── Note ──
     note = data.get_note(date_str)
     if note:
-        console.print(Panel(f"  {note}", title="[bold yellow]📝 Note[/]",
+        console.print(Panel(f"  {note}", title="[bold yellow] Note[/]",
                             border_style="yellow", expand=True))
 
 
@@ -143,7 +143,7 @@ def delete_task(date_str: str):
 
 
 def edit_note(date_str: str):
-    utils.header("📝  Daily Note", f"For {utils.friendly_date(date_str)}", "yellow")
+    utils.header("  Daily Note", f"For {utils.friendly_date(date_str)}", "yellow")
     existing = data.get_note(date_str)
     if existing:
         console.print(f"\n  [dim]Current note:[/] {existing}")
@@ -164,15 +164,15 @@ def menu():
         console.print()
         console.print(f"  [dim]Viewing:[/] [bold white]{utils.friendly_date(current)}[/]")
         console.print()
-        console.print("  [bold cyan]1.[/] ➕  Add Task")
-        console.print("  [bold cyan]2.[/] ✅  Mark Task Done / Undone")
-        console.print("  [bold cyan]3.[/] 🗑️   Delete Task")
-        console.print("  [bold cyan]4.[/] 📝  Edit Daily Note")
-        console.print("  [bold cyan]5.[/] ◀   Previous Day")
-        console.print("  [bold cyan]6.[/] ▶   Next Day")
-        console.print("  [bold cyan]7.[/] 📅  Jump to Date")
-        console.print("  [bold cyan]8.[/] 🏠  Go to Today")
-        console.print("  [bold cyan]0.[/] ← Back to Main Menu")
+        console.print("  [bold cyan]1.[/]   Add Task")
+        console.print("  [bold cyan]2.[/]     Mark Task Done / Undone")
+        console.print("  [bold cyan]3.[/]   Delete Task")
+        console.print("  [bold cyan]4.[/]     Edit Daily Note")
+        console.print("  [bold cyan]5.[/]    Previous Day")
+        console.print("  [bold cyan]6.[/]     Next Day")
+        console.print("  [bold cyan]7.[/]     Jump to Date")
+        console.print("  [bold cyan]8.[/]    Go to Today")
+        console.print("  [bold cyan]0.[/]  Back to Main Menu")
 
         choice = utils.prompt("Choice")
 
