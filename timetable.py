@@ -20,7 +20,7 @@ console = Console()
 
 def view_week():
     """Print the full weekly timetable as a rich table."""
-    utils.header("📋  Weekly Timetable", "Your recurring class / work schedule", "cyan")
+    utils.header("  Weekly Timetable", "Your recurring class / work schedule", "cyan")
 
     table = Table(box=box.ROUNDED, border_style="cyan", show_header=True, expand=True)
     table.add_column("Day", style="bold cyan", width=12)
@@ -50,7 +50,7 @@ def view_week():
 
 def view_day(day: str):
     """Print slots for one day."""
-    utils.header(f"📋  {day} Timetable", "", "cyan")
+    utils.header(f"  {day} Timetable", "", "cyan")
     slots = data.get_timetable(day)
 
     if not slots:
@@ -83,7 +83,7 @@ def _pick_day() -> str | None:
 
 
 def add_slot():
-    utils.header("➕  Add Timetable Slot", "", "green")
+    utils.header("  Add Timetable Slot", "", "green")
     day = _pick_day()
     if not day:
         return
@@ -102,7 +102,7 @@ def add_slot():
 
 
 def edit_slot():
-    utils.header("✏️   Edit Timetable Slot", "", "yellow")
+    utils.header("   Edit Timetable Slot", "", "yellow")
     day = _pick_day()
     if not day:
         return
@@ -140,7 +140,7 @@ def edit_slot():
 
 
 def delete_slot():
-    utils.header("🗑️   Delete Timetable Slot", "", "red")
+    utils.header("   Delete Timetable Slot", "", "red")
     day = _pick_day()
     if not day:
         return
@@ -170,14 +170,14 @@ def delete_slot():
 
 def menu():
     while True:
-        utils.header("📋  Timetable Manager", "Manage your recurring weekly schedule", "cyan")
+        utils.header("  Timetable Manager", "Manage your recurring weekly schedule", "cyan")
         console.print()
-        console.print("  [bold cyan]1.[/] 📅  View Full Week")
-        console.print("  [bold cyan]2.[/] 📆  View Single Day")
-        console.print("  [bold cyan]3.[/] ➕  Add Slot")
-        console.print("  [bold cyan]4.[/] ✏️   Edit Slot")
-        console.print("  [bold cyan]5.[/] 🗑️   Delete Slot")
-        console.print("  [bold cyan]0.[/] ← Back to Main Menu")
+        console.print("  [bold cyan]1.[/]   View Full Week")
+        console.print("  [bold cyan]2.[/]   View Single Day")
+        console.print("  [bold cyan]3.[/]   Add Slot")
+        console.print("  [bold cyan]4.[/]    Edit Slot")
+        console.print("  [bold cyan]5.[/]    Delete Slot")
+        console.print("  [bold cyan]0.[/]  Back to Main Menu")
 
         choice = utils.prompt("Choice")
 
