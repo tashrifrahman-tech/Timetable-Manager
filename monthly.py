@@ -29,7 +29,7 @@ DAY_HEADERS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 def view_month(year: int, month: int):
     month_name = datetime(year, month, 1).strftime("%B %Y")
-    utils.header(f"🗓️   {month_name}", "Monthly Calendar & Events", "magenta")
+    utils.header(f"   {month_name}", "Monthly Calendar & Events", "magenta")
 
     today = date.today()
     ym    = utils.month_key(year, month)
@@ -138,7 +138,7 @@ def view_month(year: int, month: int):
 # ── Actions ───────────────────────────────────────────────────────────────────
 
 def add_event(year: int, month: int):
-    utils.header("➕  Add Event", "", "green")
+    utils.header("  Add Event", "", "green")
 
     title = utils.prompt("Event title")
     if not title:
@@ -190,13 +190,13 @@ def menu():
     while True:
         view_month(year, month)
         console.print()
-        console.print("  [bold cyan]1.[/] ➕  Add Event")
-        console.print("  [bold cyan]2.[/] 🗑️   Delete Event")
-        console.print("  [bold cyan]3.[/] ◀   Previous Month")
-        console.print("  [bold cyan]4.[/] ▶   Next Month")
-        console.print("  [bold cyan]5.[/] 🏠  This Month")
-        console.print("  [bold cyan]6.[/] 🔍  Jump to Month")
-        console.print("  [bold cyan]0.[/] ← Back to Main Menu")
+        console.print("  [bold cyan]1.[/]   Add Event")
+        console.print("  [bold cyan]2.[/]    Delete Event")
+        console.print("  [bold cyan]3.[/]    Previous Month")
+        console.print("  [bold cyan]4.[/]     Next Month")
+        console.print("  [bold cyan]5.[/]     This Month")
+        console.print("  [bold cyan]6.[/]     Jump to Month")
+        console.print("  [bold cyan]0.[/]   Back to Main Menu")
 
         choice = utils.prompt("Choice")
 
