@@ -10,7 +10,7 @@ from rich import box
 
 console = Console()
 
-APP_TITLE = "📅  T I M E T A B L E  M A N A G E R"
+APP_TITLE = "  T I M E T A B L E  M A N A G E R"
 
 PRIORITY_STYLE = {
     "high":   "bold red",
@@ -87,7 +87,7 @@ def pick_from(options: list[str], label: str = "Choose") -> int | None:
 
 
 def pick_priority() -> str:
-    idx = pick_from(["🔴 High", "🟡 Medium", "🟢 Low"], "Priority")
+    idx = pick_from([" High", " Medium", " Low"], "Priority")
     return ["high", "medium", "low"][idx] if idx is not None else "medium"
 
 
