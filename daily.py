@@ -81,7 +81,7 @@ def view_day(date_str: str):
 # ── Actions ────────────────────────────────────────────────────────────────────
 
 def add_task(date_str: str):
-    utils.header("➕  Add Task", f"For {utils.friendly_date(date_str)}", "green")
+    utils.header("  Add Task", f"For {utils.friendly_date(date_str)}", "green")
 
     title = utils.prompt("Task title")
     if not title:
