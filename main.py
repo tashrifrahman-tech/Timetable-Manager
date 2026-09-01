@@ -2,10 +2,10 @@
 main.py — Entry point for the Timetable Manager.
 
 Tabbed main menu:
-  Tab 1 → 📋 Timetable   (recurring weekly schedule)
-  Tab 2 → 📅 Daily       (day-to-day task manager)
-  Tab 3 → 📆 Weekly      (weekly overview + tasks)
-  Tab 4 → 🗓️  Monthly     (calendar + events)
+  Tab 1 → Timetable   (recurring weekly schedule)
+  Tab 2 → Daily       (day-to-day task manager)
+  Tab 3 → Weekly      (weekly overview + tasks)
+  Tab 4 → Monthly     (calendar + events)
 """
 
 from datetime import date
