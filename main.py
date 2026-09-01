@@ -43,15 +43,15 @@ def show_dashboard():
 
     # ── Today panel ──
     t = Text()
-    t.append(f"\n  📅  Today: ", style="dim")
+    t.append(f"\n    Today: ", style="dim")
     t.append(utils.friendly_date(today) + "\n", style="bold white")
-    t.append(f"\n  📋  Classes:  ", style="dim")
+    t.append(f"\n    Classes:  ", style="dim")
     t.append(f"{len(slots)} slot(s)\n", style="bold cyan")
-    t.append(f"  ✅  Tasks:    ", style="dim")
+    t.append(f"    Tasks:    ", style="dim")
     t.append(f"{done} done", style="bold green")
     t.append(f"  /  ", style="dim")
     t.append(f"{pending} pending\n", style="bold yellow")
-    t.append(f"  🗓️   Events:   ", style="dim")
+    t.append(f"     Events:   ", style="dim")
     t.append(f"{len(today_evs)} today\n", style="bold magenta")
 
     # Next upcoming task
@@ -70,7 +70,7 @@ def show_dashboard():
     next_class = next((s for s in slots if s["time"] >= now), None)
     if next_class:
         color = next_class.get("color", "cyan")
-        t.append(f"\n  📖  Next class:  ", style="dim")
+        t.append(f"\n    Next class:  ", style="dim")
         t.append(f"{next_class['subject']}", style=f"bold {color}")
         t.append(f"  @ {next_class['time']}\n", style="dim")
 
@@ -87,7 +87,7 @@ def main():
         console.print()
         console.print(
             Panel(
-                Text("📅  TIMETABLE MANAGER", justify="center", style="bold cyan"),
+                Text("  TIMETABLE MANAGER", justify="center", style="bold cyan"),
                 subtitle="[dim]Your complete schedule organizer[/dim]",
                 border_style="cyan",
                 expand=True,
@@ -103,10 +103,10 @@ def main():
         tab_table.add_column(justify="center", style="bold blue",    min_width=22)
         tab_table.add_column(justify="center", style="bold magenta", min_width=22)
         tab_table.add_row(
-            "[ 1 ]  📋  Timetable",
-            "[ 2 ]  📅  Daily",
-            "[ 3 ]  📆  Weekly",
-            "[ 4 ]  🗓️   Monthly",
+            "[ 1 ]    Timetable",
+            "[ 2 ]    Daily",
+            "[ 3 ]    Weekly",
+            "[ 4 ]     Monthly",
         )
         console.print(tab_table)
         console.print("  [dim]0.[/] Exit\n")
@@ -119,7 +119,7 @@ def main():
         elif choice == "4": monthly.menu()
         elif choice == "0":
             utils.clear()
-            console.print("\n  [bold cyan]Goodbye! See you tomorrow. 👋[/]\n")
+            console.print("\n  [bold cyan]Goodbye! See you tomorrow. [/]\n")
             break
         else:
             utils.error("Enter 1, 2, 3, 4 or 0.")
