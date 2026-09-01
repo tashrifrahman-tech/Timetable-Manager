@@ -42,7 +42,7 @@ def view_week(week_offset: int = 0):
     week_start = datetime.strptime(dates[0], "%Y-%m-%d").strftime("%d %b")
     week_end   = datetime.strptime(dates[6], "%Y-%m-%d").strftime("%d %b %Y")
     utils.header(
-        f"📆  Week of {week_start} – {week_end}",
+        f"  Week of {week_start} – {week_end}",
         "Weekly Overview", "blue",
     )
 
@@ -182,12 +182,12 @@ def menu():
     while True:
         dates = view_week(offset)
         console.print()
-        console.print("  [bold cyan]1.[/] ➕  Add Task to a Day")
-        console.print("  [bold cyan]2.[/] ✅  Mark Task Done / Undone")
-        console.print("  [bold cyan]3.[/] ◀   Previous Week")
-        console.print("  [bold cyan]4.[/] ▶   Next Week")
-        console.print("  [bold cyan]5.[/] 🏠  This Week")
-        console.print("  [bold cyan]0.[/] ← Back to Main Menu")
+        console.print("  [bold cyan]1.[/]   Add Task to a Day")
+        console.print("  [bold cyan]2.[/]   Mark Task Done / Undone")
+        console.print("  [bold cyan]3.[/]    Previous Week")
+        console.print("  [bold cyan]4.[/]    Next Week")
+        console.print("  [bold cyan]5.[/]   This Week")
+        console.print("  [bold cyan]0.[/]  Back to Main Menu")
 
         choice = utils.prompt("Choice")
 
